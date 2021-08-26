@@ -3,7 +3,6 @@ a = ['century', 'customer', 'democratic', 'Congress', 'customer', 'evening',
 b = ['weapon', 'western', 'traditional', 'guess', 'customer', 'exist',
      'democratic', 'Congress', 'evening', 'finish', 'western', 'executive']
 
-
 def common_words(list1, list2):
     list1_lower = [word.lower() for word in list1]
     list2_lower = [word.lower() for word in list2]

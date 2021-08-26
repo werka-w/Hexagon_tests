@@ -1,9 +1,7 @@
 from os import listdir
 from os.path import isfile, join, getsize
 from itertools import groupby
-
-directory = "C:/Users/kicur/Desktop/Data Science/Python_exercises"
-onlyfiles = [f for f in listdir(directory)]
+import sys
 
 def files_in_dir(directory):
    files = [f for f in listdir(directory) if isfile(join(directory, f))]
@@ -23,9 +21,11 @@ def sorted_by_size(files_dict):
         dict_sorted[key] = sorted_by_size
     return dict_sorted
 
+directory = sys.argv[1]
 files_with_sizes = get_files_with_sizes(directory)
 
 files_dict = {key: list(ele) for key, ele in groupby(files_with_sizes, key=lambda x: x[1][0:3])}
-print(sorted_by_size(files_dict))
+result = sorted_by_size(files_dict)
+print(result)
 
 
